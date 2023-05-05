@@ -9,10 +9,6 @@
 <body>
     <nav id="navbar">
       <a href="" class="nav-brand"><b>Dollar To Naira Exchange App</a>
-      <ul>
-        <li class="nav-item"><a href="about.html">About us</a></li>
-        <li><a href="" class="nav-item btn btn-default">Register</a></li>
-      </ul>
     </nav>
 
     <div class="container" id="main">
@@ -35,11 +31,6 @@
         </form>
     </div>
 
-    <footer id="footer-wrapper">
-        <a href="about.html" target="_blank">About us</a>
-        <a href="contact.html" target="_blank">Contact us</a>
-    </footer>
-
     <script>
          const convertButton = document.querySelector('#conversion-form');
         // convertButton.addEventListener('submit', (e) => {
@@ -53,7 +44,6 @@
             e.preventDefault();
             const inputtedAmount = document.querySelector('#amount1').value;
             if(isNaN(inputtedAmount) || inputtedAmount === '' || inputtedAmount < 0) {
-                alert('Please enter a valid number');
                 return "";
             }
             fetch('https://api.exchangerate-api.com/v4/latest/USD')
