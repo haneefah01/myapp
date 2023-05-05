@@ -26,7 +26,7 @@
             <label for="amount2">Amount(in Dollar)</label>
             <input id="amount2" type="text" placeholder="Enter your amount">
             <br />
-            <label for="amount">Amount(in dollar)</label>
+            <label for="amount">Amount(in Naira)</label>
             <input id="coverted-amount" type="text" readonly placeholder="Display equilvalence" /> 
             <div>
                <input type="submit" value="Convert" id="convert-button" class="btn btn-default">
@@ -86,7 +86,7 @@
 
 
         const nairaToDollarConversion = (amount2) => {
-            const DOLLAR_RATE =733.13782981;
+            const DOLLAR_RATE =725;
             result=Number(amount2)*DOLLAR_RATE;
             return result.toFixed(2)
             if(isNaN(amount2) || amount2 === '' || amount2 < 0) {
