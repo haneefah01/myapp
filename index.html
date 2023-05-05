@@ -8,7 +8,7 @@
 </head>
 <body>
     <nav id="navbar">
-      <a href="" class="nav-brand"><b>Dollar To Naira Exchange App</a>
+      <a href="" class="nav-brand"><b><center>Dollar To Naira Exchange App</a>
     </nav>
 
     <div class="container" id="main">
@@ -70,6 +70,7 @@
             e.preventDefault();
          const amountField = document.querySelector('#amount2').value
          const convertedAmount = nairaToDollarConversion(amountField);
+         const DOLLAR_RATE =725;
          document.querySelector('#coverted-amount').value = convertedAmount=== ""? "-" : `#${convertedAmount}`;
          document.querySelector('#src').textContent = `1 USD = ${DOLLAR_RATE} NGN`
          })
