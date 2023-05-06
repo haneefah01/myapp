@@ -54,7 +54,7 @@
                 const DOLLAR_RATE =731.53;
                 document.querySelector('#coverted-amount1').value = `₦${result}`
                 document.querySelector('#src1').textContent = `1 USD = ${dollarRate} NGN CBN/Forex Rate`
-                document.querySelector('#src').textContent = `1 USD = {DOLLAR_RATE} NGN Black Market Rate`
+                document.querySelector('#src').textContent = `1 USD = ${DOLLAR_RATE} NGN Black Market Rate`
                
             })
             .catch(error => {
