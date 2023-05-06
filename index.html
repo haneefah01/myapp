@@ -50,9 +50,10 @@
             .then(data => {
                 const dollarRate = data.rates.NGN;
                 const convertedAmount = Number(inputtedAmount) * dollarRate;
-                result=convertedAmount.toFixed(2)
+                const result = convertedAmount.toFixed(2)
+                const foratedResult = result.toLocaleString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                document.querySelector('#coverted-amount1').value = `₦${foratedResult}`
                 const DOLLAR_RATE =731.53;
-                document.querySelector('#coverted-amount1').value = `₦${result}`
                 document.querySelector('#src1').textContent = `1 USD = ${dollarRate} NGN CBN/Forex Rate`
                 document.querySelector('#src').textContent = `1 USD = ${DOLLAR_RATE} NGN Black Market Rate`
                
@@ -76,11 +77,11 @@
        
          })
 
-
-        const nairaToDollarConversion = (amount) => {
+         const nairaToDollarConversion = (amount) => {
             const DOLLAR_RATE =731.53;
-            result=Number(amount)*DOLLAR_RATE;
-            return result.toFixed(2)
+            const result = Number(amount)*DOLLAR_RATE;
+            const results=result.toFixed(2)
+            return results.toLocaleString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
             if(isNaN(amount) || amount === '' || amount < 0) {
                 alert('Please enter a valid number');
                 return "";
@@ -88,14 +89,7 @@
     
         }
 
-
-
-
-
-
-       
-
-        
+ 
     </script>
 </body>
 </html>
