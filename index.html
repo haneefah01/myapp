@@ -20,12 +20,13 @@
             <label for="amount">Amount(in Naira) CBN/Forex Rate</label>
             <input id="coverted-amount1" type="text" readonly placeholder="Display equilvalence"">
             <br/>
-            <label for="amount">Amount(in Naira) Aboki/Black market Rate</label>
+            <label for="amount">Amount(in Naira) Black market Rate</label>
             <input id="coverted-amount" type="text" readonly placeholder="Display equilvalence" /> 
             <div>
                <input type="submit" value="Convert" id="convert-button" class="btn btn-default">
             </div>
             <p id="src"></p>
+            <p id="src1"></p>
         </form>
     </div>
 
@@ -50,7 +51,11 @@
                 const dollarRate = data.rates.NGN;
                 const convertedAmount = Number(inputtedAmount) * dollarRate;
                 result=convertedAmount.toFixed(2)
+                const DOLLAR_RATE =731.53;
                 document.querySelector('#coverted-amount1').value = `#${result}`
+                document.querySelector('#src1').textContent = `1 USD = ${dollarRate} NGN CBN/Forex Rate`
+                document.querySelector('#src').textContent = `1 USD = ${DOLLAR_RATE} NGN Black Market Rate`
+               
             })
             .catch(error => {
                 alert("error ")
@@ -67,9 +72,8 @@
             e.preventDefault();
          const amountField = document.querySelector('#amount').value
          const convertedAmount = nairaToDollarConversion(amountField);
-         const DOLLAR_RATE =731.53;
          document.querySelector('#coverted-amount').value = convertedAmount=== ""? "-" : `#${convertedAmount}`;
-         
+       
          })
 
 
