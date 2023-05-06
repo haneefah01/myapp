@@ -52,9 +52,9 @@
                 const convertedAmount = Number(inputtedAmount) * dollarRate;
                 result=convertedAmount.toFixed(2)
                 const DOLLAR_RATE =731.53;
-                document.querySelector('#coverted-amount1').value = `#${result}`
+                document.querySelector('#coverted-amount1').value = `₦${result}`
                 document.querySelector('#src1').textContent = `1 USD = ${dollarRate} NGN CBN/Forex Rate`
-                document.querySelector('#src').textContent = `1 USD = ${DOLLAR_RATE} NGN Black Market Rate`
+                document.querySelector('#src').textContent = `1 USD = {DOLLAR_RATE} NGN Black Market Rate`
                
             })
             .catch(error => {
@@ -72,7 +72,7 @@
             e.preventDefault();
          const amountField = document.querySelector('#amount').value
          const convertedAmount = nairaToDollarConversion(amountField);
-         document.querySelector('#coverted-amount').value = convertedAmount=== ""? "-" : `#${convertedAmount}`;
+         document.querySelector('#coverted-amount').value = convertedAmount=== ""? "-" : `₦${convertedAmount}`;
        
          })
 
