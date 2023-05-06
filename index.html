@@ -15,14 +15,12 @@
         <h1>Welcome to Ramoney</h1>
 
         <form id="conversion-form" novalidate>
-            <h3> CBN/Forex Rate</h3>
-            <label for="amount1">Amount(in Dollar)</label>
-            <input id="amount1" type="text" placeholder="Enter your amount">
-            <h3> Black Market/Aboki Rate</h3>
-            <label for="amount2">Amount(in Dollar)</label>
-            <input id="amount2" type="text" placeholder="Enter your amount">
-            <br />
-            <label for="amount">Amount(in Naira)</label>
+            <label for="amount"></label>
+            <input id="amount" type="text" placeholder="Enter your amount">
+            <label for="amount">Amount(in Naira) CBN/Forex Rate</label>
+            <input id="coverted-amount1" type="text" readonly placeholder="Display equilvalence"">
+            <br/>
+            <label for="amount">Amount(in Naira) Aboki/Black market Rate</label>
             <input id="coverted-amount" type="text" readonly placeholder="Display equilvalence" /> 
             <div>
                <input type="submit" value="Convert" id="convert-button" class="btn btn-default">
@@ -42,7 +40,7 @@
 
          convertButton.addEventListener('submit', (e) => {
             e.preventDefault();
-            const inputtedAmount = document.querySelector('#amount1').value;
+            const inputtedAmount = document.querySelector('#amount').value;
             if(isNaN(inputtedAmount) || inputtedAmount === '' || inputtedAmount < 0) {
                 return "";
             }
@@ -52,8 +50,7 @@
                 const dollarRate = data.rates.NGN;
                 const convertedAmount = Number(inputtedAmount) * dollarRate;
                 result=convertedAmount.toFixed(2)
-                document.querySelector('#coverted-amount').value = `#${result}`
-                document.querySelector('#src').textContent = `1 USD = ${dollarRate} NGN`
+                document.querySelector('#coverted-amount1').value = `#${result}`
             })
             .catch(error => {
                 alert("error ")
@@ -68,19 +65,19 @@
    
             convertButton.addEventListener('submit', (e) => {
             e.preventDefault();
-         const amountField = document.querySelector('#amount2').value
+         const amountField = document.querySelector('#amount').value
          const convertedAmount = nairaToDollarConversion(amountField);
          const DOLLAR_RATE =725;
          document.querySelector('#coverted-amount').value = convertedAmount=== ""? "-" : `#${convertedAmount}`;
-         document.querySelector('#src').textContent = `1 USD = ${DOLLAR_RATE} NGN`
+         
          })
 
 
-        const nairaToDollarConversion = (amount2) => {
+        const nairaToDollarConversion = (amount) => {
             const DOLLAR_RATE =725;
-            result=Number(amount2)*DOLLAR_RATE;
+            result=Number(amount)*DOLLAR_RATE;
             return result.toFixed(2)
-            if(isNaN(amount2) || amount2 === '' || amount2 < 0) {
+            if(isNaN(amount) || amount === '' || amount < 0) {
                 alert('Please enter a valid number');
                 return "";
             }
