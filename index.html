@@ -17,14 +17,16 @@
         <form id="conversion-form" novalidate>
             <label for="amount">Enter the Amount(in Dollar) </label>
             <input id="amount" type="text" placeholder="Enter your amount">
+            <div>
+                <input type="submit" value="Convert" id="convert-button" class="btn btn-default">
+            </div>
+            <br/>
             <label for="amount">Amount(in Naira) CBN/Forex Rate</label>
             <input id="coverted-amount1" type="text" readonly placeholder="Display equilvalence"">
             <br/>
             <label for="amount">Amount(in Naira) Black market Rate</label>
             <input id="coverted-amount" type="text" readonly placeholder="Display equilvalence" /> 
-            <div>
-               <input type="submit" value="Convert" id="convert-button" class="btn btn-default">
-            </div>
+          
             <p id="src"></p>
             <p id="src1"></p>
         </form>
@@ -89,7 +91,19 @@
     
         }
 
- 
+        var input = document.getElementById('input');
+        var dropdown = document.getElementById('dropdown');
+      
+        input.addEventListener('click', function() {
+          dropdown.style.display = 'block';
+        });
+      
+        dropdown.addEventListener('click', function(e) {
+          if (e.target.tagName === 'LI') {
+            input.value = e.target.innerHTML;
+            dropdown.style.display = 'none';
+          }
+        });
     </script>
 </body>
 </html>
