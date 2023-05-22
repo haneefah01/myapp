@@ -1,0 +1,95 @@
+body{
+    background: url(ramoney.avif);
+    width: 100%;
+    height: 100vh;
+    font-family: sans-serif;
+}
+.navbar{
+    width: 100%;
+    height: 100px;
+}
+h2{
+    text-align: center;
+    font-size: 40px;
+    color: wheat;
+}
+.signup{
+    width: 420px;
+    height: 820px;
+    margin:auto;
+    background:#3eb6a209;
+    border-radius: 3px;
+}
+.login{
+    width: 360px;
+    height: 320px;
+    margin:auto;
+    background:#3eb6a209;
+    border-radius: 3px;
+}
+.index{
+    width: 420px;
+    height: 500px;
+    margin:auto;
+    background:#3eb6a209;
+    border-radius: 3px;
+}
+h1{
+    text-align: center;
+    color: wheat;
+}
+h3{
+    text-align: center;
+    margin:20px;
+    padding-top: 15px;
+    color: wheat;
+}
+form{
+    width: 400px;
+    margin-left: 20px;
+}
+form label{
+    display: flex;
+    margin-top: 20px;
+    font-size: 20px;
+    color: wheat;
+}
+form input{
+    width: 100%;
+    height: 30px;
+    padding: 7px;
+    border: none;
+    border: 1px solid gray;
+    border-radius: 6px;
+}
+input[type="submit"]{
+    width: 30%;
+    height: 30px;
+    margin-top: 20px;
+    background-color: brown;
+    color: blue;
+    font-size: 18px;
+    cursor: pointer ;
+}
+input[type="submit"]:hover{
+   background: rgb(red, green, blue);
+    color: wheat;
+}
+p{
+    text-align: center;
+    padding-top: 20px;
+    font-size: 18px;
+    color: wheat;
+}
+a{
+    color: wheat;
+    font-size: 18px;
+}
+#src{
+    font-size: 20px;
+    color: wheat;
+}
+#src1{
+    font-size: 20px;
+    color: wheat;
+}
